@@ -1,0 +1,2 @@
+This client uses mcp918.txt
+Put the minecraft folder in the src folder in ur mcp directory
