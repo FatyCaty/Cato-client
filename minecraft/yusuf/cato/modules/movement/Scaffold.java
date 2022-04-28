@@ -28,6 +28,8 @@ import yusuf.cato.settings.BooleanSetting;
 public class Scaffold extends Module {
 	
 	BooleanSetting noSwing = new BooleanSetting("noSwing", true);
+	BooleanSetting noSprint = new BooleanSetting("noSprint", true);
+
 	
 	public Scaffold(){
 		super("Scaffold", Keyboard.KEY_Z , Category.MOVEMENT);
@@ -116,6 +118,8 @@ public class Scaffold extends Module {
 			float pitch = (float) -(Math.atan2(y, distance) * 100 / Math.PI);
 			if(!(noSwing.isEnabled()))
 				_p.swingItem();
+			if(noSprint.isEnabled())
+				mc.thePlayer.setSprinting(false);
 			
 			mc.thePlayer.sendQueue.addToSendQueue(new C03PacketPlayer.C06PacketPlayerPosLook(_p.posX, _p.posY, _p.posZ, yaw, pitch, _p.onGround));
 

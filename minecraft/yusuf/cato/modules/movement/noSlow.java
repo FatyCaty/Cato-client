@@ -12,7 +12,7 @@ import yusuf.cato.modules.Module;
 
 public class noSlow extends Module {
 	public noSlow(){
-		super("Sprint", Keyboard.KEY_M , Category.MOVEMENT);
+		super("noSlow", Keyboard.KEY_M , Category.MOVEMENT);
 	}
 	
 	public void onEnable() {
@@ -26,14 +26,7 @@ public class noSlow extends Module {
 	
 	public void onEvent(Event e) {
 		if(e instanceof EventUpdate) {
-			if(e.isPre()) {
-
-				
-				if (mc.thePlayer.isBlocking() && mc.thePlayer.isUsingItem()){
-					// send packet to do something ye
-					
-				}
-			}
+			
 		}
 	}
 	

@@ -19,7 +19,7 @@ import org.lwjgl.opengl.Display;
 //Nefs Video https://youtu.be/o8fuBYUB6cI
 
 public class Cato {
-	public static String name = "Cato", version =  "b1-Dev", author = "Yusuf aka FatyCaty";
+	public static String name = "Cato", version =  "b1-Dev", author = "Yusuf -> FatyCaty";
 	public static CopyOnWriteArrayList<Module> modules = new CopyOnWriteArrayList<Module>();
 	public static HUD hud = new HUD();
 	public static AltManager altManager;

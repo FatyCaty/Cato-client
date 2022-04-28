@@ -315,9 +315,9 @@ public class ItemRenderer
     	if(yusuf.cato.modules.render.BlockAnimations.currentAnimation == "Amongus") {
     		
     		GlStateManager.translate(-0.5F, 0.2F, 0.0F);
-        	GlStateManager.rotate(30.0F, 0.0F, 1.0F, 0.0F);
-        	GlStateManager.rotate(-80.0F, 1.0F, 0.0F, 0.0F);
         	GlStateManager.rotate(60.0F, 0.0F, 1.0F, 0.0F);
+        	GlStateManager.rotate(-80.0F, 1.0F, 0.0F, 0.0F);
+        	GlStateManager.rotate(60.0F, 0.0F, 1.0F, 0.0F);    		
     	}
     	
     	GlStateManager.translate(-0.5F, 0.2F, 0.0F);
