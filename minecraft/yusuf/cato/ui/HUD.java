@@ -23,7 +23,7 @@ public class HUD {
 		FontRenderer fr = mc.fontRendererObj;
 		
 		/*
-		 * Nefarious intents method of sorting which I dont use lol
+		 * Nefarious intents method of sorting which I dont use
 		 */
 		//Cato.modules.sort(Comparator.comparingInt(m -> mc.fontRendererObj.getStringWidth(((Module)m).name)));
 		
@@ -39,12 +39,13 @@ public class HUD {
 		//this.mc.getTextureManager().bindTexture(new ResourceLocation("catoassets//CatoLogo.png"));
 		//Gui.drawModalRectWithCustomSizedTexture(1 - 1, (int) (2 - 2.5), 0, 0, 86, 49, 86, 49);
 		
+		/*
 		GlStateManager.pushMatrix();
 		GlStateManager.translate(30, 10, 0);
 		GlStateManager.scale(0.5, 0.5, 1);
 		fr.drawString("CatLover Edition <3", 4, 4, -2);
 		GlStateManager.popMatrix();
-		
+		*/
 		
 		
 		
@@ -61,9 +62,10 @@ public class HUD {
 			int offset = count*(fr.FONT_HEIGHT + 6);
 
 			//ArrayList background rendering
-			//Gui.drawRect((int)sr.getScaledWidth() - fr.getStringWidth(m.name) - 12, 5  + count*(fr.FONT_HEIGHT + 3),sr.getScaledWidth() - 4, 8 + fr.FONT_HEIGHT + offset,0x30888888);
+			Gui.drawRect((int)sr.getScaledWidth() - fr.getStringWidth(m.name) - 12, 5  + count*(fr.FONT_HEIGHT + 3),sr.getScaledWidth() - 4, 8 + fr.FONT_HEIGHT + offset,0x30888888);
 			//ArrayList text rendering
 			fr.drawString(m.name, sr.getScaledWidth() - fr.getStringWidth(m.name) - 8 , 8 + count*(fr.FONT_HEIGHT + 4), -1);
+			
 			
 			count++;
 		}

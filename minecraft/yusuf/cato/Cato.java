@@ -32,15 +32,16 @@ public class Cato {
 		
 		
 		modules.add(new BlockAnimations());
-		modules.add(new FullBright());	
+		modules.add(new FullBright());
+		modules.add(new Scaffold());
 		modules.add(new NoFall());
 		modules.add(new Amogus());
 		modules.add(new Sprint());
-		modules.add(new Aura());
 		modules.add(new Speed());
+		modules.add(new Aura());
 		modules.add(new Step());
 		modules.add(new Fly());
-		modules.add(new Scaffold());
+		
 		modules.add(new noSlow());
 
 		

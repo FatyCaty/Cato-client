@@ -24,7 +24,7 @@ import yusuf.cato.util.Timer;
 
 public class Aura extends Module {
 	
-	public int auraReach = 4;
+	public double auraReach = 3.3;
 	public int cps = 10;
 	ModeSetting rotationMode = new ModeSetting("Rotation Modes", "SilentRotation", "NoRotation", "NonSilentRotation");
 	BooleanSetting onlyAttackPlayers = new BooleanSetting("Only Attack Players", false);

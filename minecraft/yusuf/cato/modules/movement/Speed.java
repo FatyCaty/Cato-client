@@ -44,13 +44,9 @@ public class Speed extends Module {
 				}
 				
 				if(speedMode.is("Bhop")) {
-					if(mc.thePlayer.onGround && mc.thePlayer.moveForward > 0) {
-						mc.thePlayer.jump();
-						
-						if (!(mc.thePlayer.isUsingItem() && mc.thePlayer.isSneaking()) && mc.thePlayer.isCollidedHorizontally){
-							mc.thePlayer.setSprinting(true);
-	
-						}
+					if(mc.thePlayer.onGround) {
+						mc.thePlayer.motionY += 0.51;
+						mc.thePlayer.moveStrafing += 2f;
 					}
 				}
 			}

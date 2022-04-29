@@ -19,9 +19,11 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.Vec3;
 import yusuf.cato.events.Event;
+import yusuf.cato.events.listeners.EventMotion;
 import yusuf.cato.events.listeners.EventUpdate;
 import yusuf.cato.modules.Module;
 import yusuf.cato.settings.BooleanSetting;
+import yusuf.cato.util.Timer;
 
 //Video I am following: https://youtu.be/WE82aSuIB3U?t=530
 
@@ -29,7 +31,8 @@ public class Scaffold extends Module {
 	
 	BooleanSetting noSwing = new BooleanSetting("noSwing", true);
 	BooleanSetting noSprint = new BooleanSetting("noSprint", true);
-
+	private Timer timer1 = new Timer();
+	int blockPlaceDelay = 1000;
 	
 	public Scaffold(){
 		super("Scaffold", Keyboard.KEY_Z , Category.MOVEMENT);
@@ -121,8 +124,6 @@ public class Scaffold extends Module {
 			if(noSprint.isEnabled())
 				mc.thePlayer.setSprinting(false);
 			
-			mc.thePlayer.sendQueue.addToSendQueue(new C03PacketPlayer.C06PacketPlayerPosLook(_p.posX, _p.posY, _p.posZ, yaw, pitch, _p.onGround));
-
 			
 		}
 		
