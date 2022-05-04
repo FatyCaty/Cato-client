@@ -34,6 +34,8 @@ public class Cato {
 		modules.add(new BlockAnimations());
 		modules.add(new FullBright());
 		modules.add(new Scaffold());
+		modules.add(new Velocity());
+		modules.add(new noSlow());
 		modules.add(new NoFall());
 		modules.add(new Amogus());
 		modules.add(new Sprint());
@@ -42,7 +44,6 @@ public class Cato {
 		modules.add(new Step());
 		modules.add(new Fly());
 		
-		modules.add(new noSlow());
 
 		
 	}

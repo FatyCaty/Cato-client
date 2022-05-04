@@ -33,7 +33,8 @@ public class HUD {
 		GlStateManager.translate(4, 4, 0);
 		GlStateManager.scale(1, 1, 1);
 		
-		fr.drawString(Cato.name, 4, 4, -1);
+		fr.drawString("C", 4, 4, -99999);
+		fr.drawString("ato", 10, 4, -1);
 		GlStateManager.popMatrix();
 		
 		//this.mc.getTextureManager().bindTexture(new ResourceLocation("catoassets//CatoLogo.png"));
@@ -59,12 +60,12 @@ public class HUD {
 			}
 			
 			//int var storing offset
-			int offset = count*(fr.FONT_HEIGHT + 6);
+			int offset = count*(fr.FONT_HEIGHT + 5);
 
 			//ArrayList background rendering
-			Gui.drawRect((int)sr.getScaledWidth() - fr.getStringWidth(m.name) - 12, 5  + count*(fr.FONT_HEIGHT + 3),sr.getScaledWidth() - 4, 8 + fr.FONT_HEIGHT + offset,0x30888888);
+			//Gui.drawRect((int)sr.getScaledWidth() - fr.getStringWidth(m.name) - 12, 5  + count*(fr.FONT_HEIGHT + 3),sr.getScaledWidth() - 4, 8 + fr.FONT_HEIGHT + offset,0x30888888);
 			//ArrayList text rendering
-			fr.drawString(m.name, sr.getScaledWidth() - fr.getStringWidth(m.name) - 8 , 8 + count*(fr.FONT_HEIGHT + 4), -1);
+			fr.drawString(m.name, sr.getScaledWidth() - fr.getStringWidth(m.name) - 10 , 8 + count*(fr.FONT_HEIGHT + 4), -99999);
 			
 			
 			count++;
