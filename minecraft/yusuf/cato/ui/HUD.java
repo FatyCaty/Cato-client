@@ -32,7 +32,6 @@ public class HUD {
 		GlStateManager.pushMatrix();
 		GlStateManager.translate(4, 4, 0);
 		GlStateManager.scale(1, 1, 1);
-		
 		fr.drawString("C", 4, 4, -99999);
 		fr.drawString("ato", 10, 4, -1);
 		GlStateManager.popMatrix();
@@ -40,18 +39,18 @@ public class HUD {
 		//this.mc.getTextureManager().bindTexture(new ResourceLocation("catoassets//CatoLogo.png"));
 		//Gui.drawModalRectWithCustomSizedTexture(1 - 1, (int) (2 - 2.5), 0, 0, 86, 49, 86, 49);
 		
-		/*
+		
 		GlStateManager.pushMatrix();
 		GlStateManager.translate(30, 10, 0);
 		GlStateManager.scale(0.5, 0.5, 1);
-		fr.drawString("CatLover Edition <3", 4, 4, -2);
+		fr.drawString("Ghost CatLover Edition <3", 4, 4, -2);
 		GlStateManager.popMatrix();
-		*/
 		
 		
 		
 		
-		fr.drawString(Cato.version, 2, 230, -1);
+		
+		//fr.drawString(Cato.version, 2, 230, -1);
 		
 		int count = 0;
 		for(yusuf.cato.modules.Module m : Cato.modules) {
