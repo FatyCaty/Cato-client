@@ -6,7 +6,7 @@
 > Thank you so much for too everyone which has helped me learn how to code this client. It means a lot to me :D .
 >
 ## Information
-> !!!Not safe from Log4j RCE explot!!!
+> Should be safe from log4j if u set up mcp918 with safe log4j version (replace old log4j api and core jars) with new ones from https://logging.apache.org/log4j/2.x/download.html (direct download to the one I am using: https://dlcdn.apache.org/logging/log4j/2.17.2/apache-log4j-2.17.2-bin.zip)
 > I need to fix lol
 ## Setting up Mcp918
 1. Extract the mcp918 .zip archive into a folder with the name of your client or just something.

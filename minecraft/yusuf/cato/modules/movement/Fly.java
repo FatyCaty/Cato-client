@@ -8,7 +8,7 @@ import yusuf.cato.settings.ModeSetting;
 
 public class Fly extends Module {
 	
-	ModeSetting flymode = new ModeSetting("Fly modes", "VerusJumpFly", "VerusJumpFly", "CreativeCapabilities");
+	ModeSetting flymode = new ModeSetting("Fly modes", "OldVerusJumpFly", "OldVerusJumpFly", "CreativeCapabilities");
 	private int flyTimer = 0;
 	
 	public Fly(){
@@ -30,9 +30,9 @@ public class Fly extends Module {
 	
 	public void onEvent(Event e) {
 		if(e instanceof EventUpdate) {
-			if(flymode.is("VerusJumpFly")) {
+			if(flymode.is("OldVerusJumpFly")) {
 				if(e.isPre()) {
-										flyTimer+=1;
+					flyTimer+=1;
 					mc.thePlayer.onGround = true;
 					if(flyTimer == 11){
 						mc.thePlayer.jump();
