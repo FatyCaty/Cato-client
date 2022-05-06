@@ -305,14 +305,14 @@ public class ItemRenderer
 
     private void func_178103_d()
     {
-    	if(yusuf.cato.modules.render.BlockAnimations.currentAnimation == "Normal") {
+    	if(yusuf.cato.modules.render.Animations.currentAnimation == "Normal") {
     		
     		GlStateManager.translate(-0.5F, 0.2F, 0.0F);
         	GlStateManager.rotate(30.0F, 0.0F, 1.0F, 0.0F);
         	GlStateManager.rotate(-80.0F, 1.0F, 0.0F, 0.0F);
         	GlStateManager.rotate(60.0F, 0.0F, 1.0F, 0.0F);
     	}
-    	if(yusuf.cato.modules.render.BlockAnimations.currentAnimation == "Amongus") {
+    	if(yusuf.cato.modules.render.Animations.currentAnimation == "Amongus") {
     		
     		GlStateManager.translate(-0.5F, 0.2F, 0.0F);
         	GlStateManager.rotate(60.0F, 0.0F, 1.0F, 0.0F);

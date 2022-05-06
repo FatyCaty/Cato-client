@@ -24,9 +24,9 @@ import yusuf.cato.util.Timer;
 
 public class Aura extends Module {
 	
-	public double auraReach = 3.3;
+	public double auraReach = 3.1;
 	public int cps = 10;
-	ModeSetting rotationMode = new ModeSetting("Rotation Modes", "SilentRotation", "NoRotation", "NonSilentRotation");
+	ModeSetting rotationMode = new ModeSetting("Rotation Modes", "SilentRotation", "SilentRotation", "NonSilentRotation", "NoRotation");
 	BooleanSetting onlyAttackPlayers = new BooleanSetting("Only Attack Players", false);
 	public boolean printEntityToConsole = true;
 
@@ -69,8 +69,9 @@ public class Aura extends Module {
 				if(!targets.isEmpty()) {
 					Entity target = targets.get(0);
 						if(timer.hasTimeElapsed(1000/ cps, true)) {
-						mc.thePlayer.sendQueue.addToSendQueue(new C02PacketUseEntity(target, Action.ATTACK));
-						mc.thePlayer.swingItem();
+							mc.thePlayer.sendQueue.addToSendQueue(new C02PacketUseEntity(target, Action.ATTACK));
+							mc.thePlayer.swingItem();
+						
 						
 						if(rotationMode.is("SilentRotation")) {
 							event.setYaw(getRotations(target)[0]);
@@ -80,9 +81,10 @@ public class Aura extends Module {
 							mc.thePlayer.rotationYaw = (getRotations(target)[0]);
 							mc.thePlayer.rotationPitch = (getRotations(target)[1]);
 						}
+						
 
 						
-						//TargetHUD
+						//Debug
 						if(printEntityToConsole) {
 							currentTargetName = targets.get(0).getName();
 							System.out.println("Aura Attacking Entity: " + currentTargetName);

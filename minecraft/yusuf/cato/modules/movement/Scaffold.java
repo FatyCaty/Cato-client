@@ -35,7 +35,7 @@ public class Scaffold extends Module {
 	int blockPlaceDelay = 1000;
 	
 	public Scaffold(){
-		super("Scaffold", Keyboard.KEY_Z , Category.MOVEMENT);
+		super("Scaffold", Keyboard.KEY_NONE , Category.MOVEMENT);
 		this.addSettings(noSwing);
 	}
 	
@@ -55,14 +55,19 @@ public class Scaffold extends Module {
 			
 			if(valid(bp.add(0, -2, 0))) {
 				place(bp.add(0, -1, 0), EnumFacing.UP);
+				
 			} else if (valid(bp.add(-1, -1, 0))) {
 				place(bp.add(0, -1, 0), EnumFacing.EAST);
+				
 			} else if (valid(bp.add(1, -1, 0))) {
-				place(bp.add(0, -1, -1), EnumFacing.WEST);
-			} else if (valid(bp.add(0, -1, -1))) {
+				place(bp.add(0, -1, 0), EnumFacing.WEST);
+				
+			} else if (valid(bp.add(0, -1, 0))) {
 				place(bp.add(0, -1, 0), EnumFacing.SOUTH);
-			} else if (valid(bp.add(0, -1, 1))) {
+				
+			} else if (valid(bp.add(0, -1, 0))) {
 				place(bp.add(0, -1, 0), EnumFacing.NORTH);
+				
 			} else if (valid(bp.add(1, -1, -1))) {
 				if(valid(bp.add(0, -1, 1))) {
 					place(bp.add(0, -1, 1), EnumFacing.NORTH);
@@ -100,8 +105,8 @@ public class Scaffold extends Module {
 		else if(f == EnumFacing.EAST) {
 			p = p.add(-1, 0, 0);
 		}
-		else if(f == EnumFacing.EAST) {
-			p = p.add(0, 0, -1);
+		else if(f == EnumFacing.SOUTH) {
+			p = p.add(0, 0, 0);
 		}
 		else if(f == EnumFacing.WEST) {
 			p = p.add(1, 0, 0);
@@ -113,12 +118,12 @@ public class Scaffold extends Module {
 			mc.playerController.onPlayerRightClick(_p, mc.theWorld, _p.getHeldItem(), p, f, new Vec3(0.5, 0.5, 0.5));
 			
 			double x = p.getX() + 0.25 - _p.posX;
-			double z = p.getX() + 0.25 - _p.posZ;
-			double y = p.getX() + 0.25 - _p.posY;
+			double z = p.getZ() + 0.25 - _p.posZ;
+			double y = p.getY() + 0.25 - _p.posY;
 
 			double distance = MathHelper.sqrt_double(x * x + z * z);
 			float yaw = (float) (Math.atan2(z, x) * 100 / Math.PI - 90);
-			float pitch = (float) -(Math.atan2(y, distance) * 100 / Math.PI);
+			float pitch = (float) -(Math.atan2(y, distance) * 180 / Math.PI);
 			if(!(noSwing.isEnabled()))
 				_p.swingItem();
 			if(noSprint.isEnabled())

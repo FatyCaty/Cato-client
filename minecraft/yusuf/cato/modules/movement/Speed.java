@@ -8,7 +8,7 @@ import yusuf.cato.settings.ModeSetting;
 
 public class Speed extends Module {
 	
-	ModeSetting speedMode = new ModeSetting("Speed Modes", "LowHop", "Bhop", "susimposter");
+	ModeSetting speedMode = new ModeSetting("Speed Modes", "LowHop", "Bhop", "LowHop");
 	
 	public Speed(){
 		super("Speed", Keyboard.KEY_N , Category.MOVEMENT);
@@ -33,7 +33,7 @@ public class Speed extends Module {
 					if(mc.thePlayer.onGround && mc.thePlayer.moveForward > 0) {
 						mc.thePlayer.jump();
 						
-						mc.thePlayer.moveStrafing = 2f;
+						mc.thePlayer.moveStrafing = 4.1f;
 						mc.thePlayer.motionY = 0.2;
 						
 						if (mc.thePlayer.isUsingItem() && mc.thePlayer.isSneaking() && mc.thePlayer.isCollidedHorizontally){
@@ -47,6 +47,7 @@ public class Speed extends Module {
 					if(mc.thePlayer.onGround) {
 						mc.thePlayer.motionY += 0.51;
 						mc.thePlayer.moveStrafing += 2f;
+						
 					}
 				}
 			}

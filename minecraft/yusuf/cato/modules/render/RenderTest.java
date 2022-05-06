@@ -8,12 +8,12 @@ import yusuf.cato.events.listeners.EventRenderGUI;
 import yusuf.cato.events.listeners.EventUpdate;
 import yusuf.cato.modules.Module;
 
-public class Amogus extends Module {
+public class RenderTest extends Module {
 	
 	
 	
-	public Amogus(){
-		super("Amogus", Keyboard.KEY_NONE , Category.RENDER);
+	public RenderTest(){
+		super("RenderTest", Keyboard.KEY_NONE , Category.RENDER);
 	}
 	
 	public void onEnable() {

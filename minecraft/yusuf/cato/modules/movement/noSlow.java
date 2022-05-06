@@ -10,9 +10,9 @@ import yusuf.cato.events.Event;
 import yusuf.cato.events.listeners.EventUpdate;
 import yusuf.cato.modules.Module;
 
-public class noSlow extends Module {
-	public noSlow(){
-		super("noSlow", Keyboard.KEY_M , Category.MOVEMENT);
+public class NoSlow extends Module {
+	public NoSlow(){
+		super("NoSlow", Keyboard.KEY_M , Category.MOVEMENT);
 	}
 	
 	public void onEnable() {

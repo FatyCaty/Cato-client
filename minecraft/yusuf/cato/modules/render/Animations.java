@@ -10,12 +10,12 @@ import yusuf.cato.events.listeners.EventUpdate;
 import yusuf.cato.modules.Module;
 import yusuf.cato.settings.ModeSetting;
 
-public class BlockAnimations extends Module {
+public class Animations extends Module {
 	
 	public ModeSetting animation = new ModeSetting("Block Animations", "Normal", "Normal", "Amongus");
 	public static String currentAnimation;
 	
-	public BlockAnimations(){
+	public Animations(){
 		super("BlockAnimations", Keyboard.KEY_I , Category.RENDER);
 		this.addSettings(animation);
 	}

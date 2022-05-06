@@ -19,25 +19,27 @@ import org.lwjgl.opengl.Display;
 //Nefs Video https://youtu.be/o8fuBYUB6cI
 
 public class Cato {
-	public static String name = "Cato", version =  "b1-Dev", author = "Yusuf -> FatyCaty";
+	public static String name = "Cato", version =  "b1-Dev", authors = "Yusuf -> FatyCaty, Levzzz";
 	public static CopyOnWriteArrayList<Module> modules = new CopyOnWriteArrayList<Module>();
 	public static HUD hud = new HUD();
 	public static AltManager altManager;
 	
 	public static void startup() {
-		System.out.println("Starting " + name + " " + version + " by " + author);
-		Display.setTitle(name + " " + version + " by " + author);
+		System.out.println("Starting " + name + " " + version + " by " + authors);
+		Display.setTitle(name + " " + version + " by " + authors);
 		
 		altManager = new AltManager();
 		
 		
-		modules.add(new BlockAnimations());
+		// Modules
+		modules.add(new Animations());
 		modules.add(new FullBright());
+		modules.add(new RenderTest());
 		modules.add(new Scaffold());
+		modules.add(new FastPlace());
 		modules.add(new Velocity());
-		modules.add(new noSlow());
+		modules.add(new NoSlow());
 		modules.add(new NoFall());
-		modules.add(new Amogus());
 		modules.add(new Sprint());
 		modules.add(new Speed());
 		modules.add(new Aura());
