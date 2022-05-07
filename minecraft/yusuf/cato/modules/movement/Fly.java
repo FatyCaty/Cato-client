@@ -12,7 +12,7 @@ public class Fly extends Module {
 	private int flyTimer = 0;
 	
 	public Fly(){
-		super("Fly", Keyboard.KEY_G , Category.MOVEMENT);
+		super("Fly", Keyboard.KEY_F , Category.MOVEMENT);
 		this.settings.add(flymode);
 	}
 	

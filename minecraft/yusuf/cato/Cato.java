@@ -32,6 +32,7 @@ public class Cato {
 		
 		
 		// Modules
+		modules.add(new AutoClicker());
 		modules.add(new Animations());
 		modules.add(new FullBright());
 		modules.add(new RenderTest());
