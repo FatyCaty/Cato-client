@@ -1,4 +1,4 @@
-package yusuf.cato.ui;
+package yusuf.cato.util;
 
 import java.awt.Color;
 

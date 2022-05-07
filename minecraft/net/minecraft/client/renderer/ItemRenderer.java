@@ -317,7 +317,7 @@ public class ItemRenderer
     		GlStateManager.translate(-0.5F, 0.2F, 0.0F);
         	GlStateManager.rotate(60.0F, 0.0F, 1.0F, 0.0F);
         	GlStateManager.rotate(-80.0F, 1.0F, 0.0F, 0.0F);
-        	GlStateManager.rotate(60.0F, 0.0F, 1.0F, 0.0F);    		
+        	GlStateManager.rotate(60.0F, 0.0F, 1.0F, 0.0F);		
     	}
     	
     	GlStateManager.translate(-0.5F, 0.2F, 0.0F);

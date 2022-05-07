@@ -43,7 +43,7 @@ public class HUD {
 		GlStateManager.pushMatrix();
 		GlStateManager.translate(30, 10, 0);
 		GlStateManager.scale(0.5, 0.5, 1);
-		fr.drawString("Ghost CatLover Edition <3", 4, 4, -2);
+		fr.drawString("FatyCaty | " + Cato.version, 4, 4, -2);
 		GlStateManager.popMatrix();
 		
 		

@@ -12,7 +12,7 @@ import yusuf.cato.settings.ModeSetting;
 
 public class Animations extends Module {
 	
-	public ModeSetting animation = new ModeSetting("Block Animations", "Normal", "Normal", "Amongus");
+	public ModeSetting animation = new ModeSetting("Animations", "Normal", "Normal", "Amongus");
 	public static String currentAnimation;
 	
 	public Animations(){

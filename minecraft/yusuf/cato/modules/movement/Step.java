@@ -10,7 +10,7 @@ import yusuf.cato.settings.NumberSetting;
 public class Step extends Module {
 	
 	public Step(){
-		super("Step", Keyboard.KEY_U , Category.MOVEMENT);
+		super("Step", Keyboard.KEY_NONE , Category.MOVEMENT);
 		
 	}
 	

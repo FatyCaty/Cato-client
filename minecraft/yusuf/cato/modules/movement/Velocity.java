@@ -10,9 +10,9 @@ import yusuf.cato.modules.Module;
 
 public class Velocity extends Module {
 	
-	float hVelocity = 0;
-	float vVelocity = 0;
-	float zVelocity = hVelocity;
+	float hVelocity = 0f;
+	float vVelocity = 0f;
+	//float zVelocity = hVelocity;
 
 	
 	public Velocity(){
@@ -30,14 +30,12 @@ public class Velocity extends Module {
 	
 	public void onEvent(Event e) {
 		if(e instanceof EventUpdate) {
-			if(e.isPre()) {
-				if(mc.thePlayer.hurtTime == mc.thePlayer.maxHurtTime && mc.thePlayer.maxHurtTime > 0) {
-					//S12PacketEntityVelocity.motionY *= hVelocity / 100;
-					//S12PacketEntityVelocity.motionX *= vVelocity / 100;
-					//S12PacketEntityVelocity.motionZ *= zVelocity / 100;
-
-				}
+			if(mc.thePlayer.hurtTime == mc.thePlayer.maxHurtTime && mc.thePlayer.maxHurtTime > 0) {
+				mc.thePlayer.motionX *= hVelocity / 100f;
+				mc.thePlayer.motionX *= vVelocity / 100f;
+				mc.thePlayer.motionZ *= hVelocity / 100f;
 			}
+			
 		}
 	}
 	
