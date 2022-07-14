@@ -10,7 +10,7 @@ import yusuf.cato.settings.NumberSetting;
 public class Timer extends Module {
 	private float originalTimerSpeed = mc.timer.timerSpeed;
 	
-	public static NumberSetting timerSpeedSetting = new NumberSetting("Timer Speed", 2, 1, 10, 1);
+	public static NumberSetting timerSpeedSetting = new NumberSetting("Timer Speed", 1.5, 1, 10, 1);
 	
 	
 	public Timer(){

@@ -31,6 +31,8 @@ public class RenderTest extends Module {
 			FontRenderer fr = mc.fontRendererObj;
 			
 			fr.drawString("Amogus", 200, 8, -1);
+			
+
 		}
 	}
 	

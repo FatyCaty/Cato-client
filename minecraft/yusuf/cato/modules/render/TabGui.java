@@ -11,6 +11,8 @@ import yusuf.cato.events.Event;
 import yusuf.cato.events.listeners.EventKey;
 import yusuf.cato.events.listeners.EventRenderGUI;
 import yusuf.cato.events.listeners.EventUpdate;
+import yusuf.cato.font.FontUtil;
+import yusuf.cato.font.MinecraftFontRenderer;
 import yusuf.cato.modules.Module;
 import yusuf.cato.util.ColourUtil;
 
@@ -26,13 +28,14 @@ public class TabGui extends Module {
 	public void onEvent(Event e) {
 		if(e instanceof EventRenderGUI) {
 			FontRenderer fr = mc.fontRendererObj;
-			
+			MinecraftFontRenderer ffr = FontUtil.normal;
+
 			Gui.drawRect(5, 30, 70, 30 + Module.Category.values().length * 16 + 2, 0x30000000);
-			Gui.drawRect(5, 30 + currentTab * 16, 9 + 61, 36 + currentTab * 16 + 12, /*0x90000000*/ new ColourUtil().getRainbow(10, 1, 1));
+			Gui.drawRect(5, 30 + currentTab * 16, 9 + 61, 36 + currentTab * 16 + 12, 0x90000000);
 			
 			int count = 0;
 			for(Category c : Module.Category.values()) {
-				fr.drawString(c.name, 11, 35 + count*16, -1);
+				ffr.drawString(c.name, 11, 35 + count*16, -1);
 				count++;
 
 			}

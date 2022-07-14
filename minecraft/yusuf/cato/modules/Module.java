@@ -69,9 +69,7 @@ public class Module {
 		COMBAT("Combat", 40, 50, false, true),
 	    MOVEMENT("Movement", 160, 50, false, true),
 	    PLAYER("Player", 280, 50, false, true),
-	    RENDER("Render", 400, 50, false, true),
-		OTHER("Other", 400, 50, false, true);
-
+	    RENDER("Render", 400, 50, false, true);
 		
 		public String name;
 		

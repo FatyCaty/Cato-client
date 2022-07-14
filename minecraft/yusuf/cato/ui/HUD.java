@@ -12,6 +12,8 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.util.ResourceLocation;
 import yusuf.cato.Cato;
 import yusuf.cato.events.listeners.EventRenderGUI;
+import yusuf.cato.font.FontUtil;
+import yusuf.cato.font.MinecraftFontRenderer;
 import yusuf.cato.modules.render.ClickGuiMod;
 import yusuf.cato.util.ColourUtil;
 
@@ -24,19 +26,19 @@ public class HUD {
 	public void draw() {
 		ScaledResolution sr = new ScaledResolution(mc);
 		FontRenderer fr = mc.fontRendererObj;
+		MinecraftFontRenderer ffr = FontUtil.normal;
 		
 		Cato.modules.sort(Comparator.comparingInt(m -> -(mc.fontRendererObj.getStringWidth((m).name))));
+		/*
 		GlStateManager.pushMatrix();
 		GlStateManager.translate(4, 4, 0);
 		GlStateManager.scale(1, 1, 1);
-		Gui.drawRect(2, 1,68, 2, new ColourUtil().getRainbow(3, 3, 3));
-		Gui.drawRect(2, 2,68, 15, 0x90000000);
-		fr.drawString("C", 4, 4, new ColourUtil().getRainbow(3, 3, 3));
-		fr.drawString("ato " + Cato.version, 10, 4, -1);
+		ffr.drawString("Cato", 2, 14, -1);
 		GlStateManager.popMatrix();
+		*/
 		
-		//this.mc.getTextureManager().bindTexture(new ResourceLocation("catoassets//CatoLogo.png"));
-		//Gui.drawModalRectWithCustomSizedTexture(1 - 1, (int) (2 - 2.5), 0, 0, 86, 49, 86, 49);
+		this.mc.getTextureManager().bindTexture(new ResourceLocation("Cato/watermark/watermark.png"));
+		Gui.drawScaledCustomSizeModalRect(5, -6, 0, 1, 50, 50, 50, 50, 50, 50);
 		
 		/*
 		GlStateManager.pushMatrix();
@@ -53,7 +55,7 @@ public class HUD {
 			if(!m.toggled) {
 				continue;
 			}
-			fr.drawString(m.name, sr.getScaledWidth() - fr.getStringWidth(m.name) - 4, 4 + count*(fr.FONT_HEIGHT + 4), new ColourUtil().getRainbow(5, 2, 5));
+			ffr.drawString(m.name, sr.getScaledWidth() - ffr.getStringWidth(m.name) - 4, 4 + count*(fr.FONT_HEIGHT + 3), -1);
 			count++;
 		}
 		Cato.onEvent(new EventRenderGUI());

@@ -2,11 +2,11 @@ package yusuf.cato;
 import yusuf.cato.alt.AltManager;
 import yusuf.cato.events.Event;
 import yusuf.cato.events.listeners.*;
+import yusuf.cato.font.FontUtil;
 import yusuf.cato.modules.Module;
 import yusuf.cato.modules.Module.*;
 import yusuf.cato.modules.combat.*;
 import yusuf.cato.modules.movement.*;
-import yusuf.cato.modules.other.SelfDestruct;
 import yusuf.cato.modules.render.*;
 import yusuf.cato.modules.player.*;
 import yusuf.cato.ui.HUD;
@@ -55,8 +55,9 @@ public class Cato {
 		modules.add(new Derp());
 		modules.add(new Fly());
 		modules.add(new ClickGuiMod());
-		modules.add(new SelfDestruct());
 		modules.add(new Criticals());
+		
+		FontUtil.bootstrap();
 
 
 

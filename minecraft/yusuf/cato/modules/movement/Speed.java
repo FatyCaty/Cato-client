@@ -22,7 +22,7 @@ public class Speed extends Module {
 	
 	
 	public void onDisable() {
-		mc.timer.timerSpeed = 1f;
+		mc.timer.timerSpeed = mc.timer.timerSpeed - 0.5f;
 
 	}
 	
@@ -36,11 +36,9 @@ public class Speed extends Module {
 						
 						mc.thePlayer.moveStrafing = 2f;
 						mc.thePlayer.motionY = 0.2;
-						System.out.println("Speed timer: " + mc.timer.timerSpeed);
-						
-						if (mc.thePlayer.isUsingItem() && mc.thePlayer.isSneaking() && mc.thePlayer.isCollidedHorizontally){
-							mc.thePlayer.setSprinting(true);
-	
+
+						if(mc.thePlayer.isCollidedHorizontally) {
+							mc.thePlayer.jump();
 						}
 					}
 				}
