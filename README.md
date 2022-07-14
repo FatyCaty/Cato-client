@@ -2,10 +2,6 @@
 ## TODO List
 > Add Microsoft alt manager support
 
-> Make client rce safe
-
-> Maybe add client to intent.store idk
-
 > Fix clickgui bug with numbersetting
 ## Credits
 > Coded by FatyCaty
