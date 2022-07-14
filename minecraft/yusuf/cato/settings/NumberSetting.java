@@ -23,6 +23,10 @@ public class NumberSetting extends Setting {
 		this.value = Math.round(Math.min(minimum, Math.min(maximum,value)) * precision) / precision;
 	}
 	
+	public void setValueWithoutIncrement(double value) {
+		this.value = value;
+	}
+	
 	public void increment(boolean positive) {
 		setValue(getValue() + (positive ? 1 : -1) * increment);
 	}

@@ -11,11 +11,14 @@
 >Vek4 - Altmanager: https://github.com/ve4k/AltManager - Thank you so much!
 >
 > Thank you so much for too everyone who has helped me learn how to code this client. It means a lot to me :D .
-
-
+>
 > SebSB for AutoClicker -> https://youtu.be/45894INyJXU 
 >
 > Mipselled#1666 - For Velocity, Noslow, InventoryMove and much more! - Thank you so much!
+
+> c00packetkeepalive#8386 for fixing Clickgui/numbersetting issue :D - talented roblox script maker btw
+
+
 ## Information
 > Should be safe from log4j if u set up mcp918 with safe log4j version (replace old log4j api and core jars) with new ones from https://logging.apache.org/log4j/2.x/download.html (direct download to the one I am using: https://dlcdn.apache.org/logging/log4j/2.17.2/apache-log4j-2.17.2-bin.zip)
 

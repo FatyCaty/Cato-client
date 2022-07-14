@@ -69,15 +69,18 @@ public class ClickGUI extends GuiScreen{
 								
 								double renderX = length * (s.getValue() - min) / (max - min);
 								double renderWidth = length * (s.getmaximum() - min) / (max - min);
-								
 								double diff = Math.min(length, Math.max(0, mouseX - settingX));
 								
 								if (s.dragging) {
-									if (diff == 0)
-										s.setValue(s.getMinimum());
+									if (diff == 0) {
+										s.setValueWithoutIncrement(s.getMinimum());
+										System.out.println(s.getMinimum());
+									}
+									
 									else {
 										double value = roundToPlace(((diff / length) * (max - min) + min), BigDecimal.valueOf(s.getIncrement()).scale());
-										s.setValue(value);
+										s.setValueWithoutIncrement(value);
+										//System.out.println(value);
 									}
 								}
 								
