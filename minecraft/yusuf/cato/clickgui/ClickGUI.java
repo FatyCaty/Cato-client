@@ -11,6 +11,8 @@ import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiScreen;
 import yusuf.cato.Cato;
+import yusuf.cato.font.FontUtil;
+import yusuf.cato.font.MinecraftFontRenderer;
 import yusuf.cato.modules.Module.Category;
 import yusuf.cato.settings.BooleanSetting;
 import yusuf.cato.settings.KeybindSetting;
@@ -30,6 +32,9 @@ public class ClickGUI extends GuiScreen{
 	public void drawScreen(int mouseX, int mouseY, float partialTicks) {
 		//drawDefaultBackground();
 		FontRenderer fr = mc.fontRendererObj;
+		MinecraftFontRenderer ffr = FontUtil.normal;
+
+		
 		for (Category c : Category.values()) {
 			boolean hovered = isInside(mouseX, mouseY, c.posX, c.posY, fr.getStringWidth(c.name), fr.FONT_HEIGHT);
 			if (c.dragging) {
@@ -37,8 +42,8 @@ public class ClickGUI extends GuiScreen{
 				c.posY += mouseY - oldY;
 			}
 			
-			Gui.drawRect(c.posX, c.posY, c.posX + 70, c.posY + 20, -1);
-			fr.drawString(c.name, c.posX + 35, c.posY - (fr.FONT_HEIGHT / 2) + 10, new ColourUtil().getRainbow(3, 3, 3));
+			Gui.drawRect(c.posX, c.posY, c.posX + 70, c.posY + 20, 0x90000000);
+			ffr.drawString(c.name, c.posX + 15, c.posY - (ffr.getHeight() / 2) + 10, -1);
 			
 			int x = c.posX + 4;
 			int y = c.posY + 24;
@@ -46,19 +51,19 @@ public class ClickGUI extends GuiScreen{
 				int bgY = y;
 				for (yusuf.cato.modules.Module m : Cato.getModulesByCategory(c))
 					bgY += 12;
-				Gui.drawRect(x - 4, c.posY + 20, x + 66, bgY - 1, 0x80000000);
+				Gui.drawRect(x - 4, c.posY + 20, x + 66, bgY - 1, 0x60000000);
 				for (yusuf.cato.modules.Module m : Cato.getModulesByCategory(c)) {
-					fr.drawStringWithShadow(m.name, x, y, m.toggled ? new ColourUtil().getRainbow(3, 3, 3) : -1);
+					ffr.drawStringWithShadow(m.name, x, y, m.toggled ? -9999999 : -1);
 					int settingY = y;
 					int settingX = x + 74; 
 					if (!m.settings.isEmpty() && m.showSettings) {
 						for (Setting setting : m.settings) {
 							
 							if (setting instanceof BooleanSetting)
-								fr.drawStringWithShadow(setting.name, settingX, settingY,((BooleanSetting) setting).enabled ? new ColourUtil().getRainbow(3, 3, 3) : -1);
+								ffr.drawStringWithShadow(setting.name, settingX, settingY,((BooleanSetting) setting).enabled ? new ColourUtil().getRainbow(3, 3, 3) : -1);
 							
 							if (setting instanceof ModeSetting)
-								fr.drawStringWithShadow(setting.name + ": " + ((ModeSetting) setting).getMode(), settingX, settingY, -1);
+								ffr.drawStringWithShadow(setting.name + ": " + ((ModeSetting) setting).getMode(), settingX, settingY, -1);
 							
 							if (setting instanceof NumberSetting) {
 								NumberSetting s = (NumberSetting) setting;
@@ -86,11 +91,11 @@ public class ClickGUI extends GuiScreen{
 								
 								Gui.drawRectFloat(settingX, settingY, (float) (settingX + renderX), settingY + fr.FONT_HEIGHT,(new ColourUtil().getRainbow(3, 3, 3)));
 								
-								fr.drawStringWithShadow(s.name + ": " + s.getValue(), settingX, settingY, -1);
+								ffr.drawStringWithShadow(s.name + ": " + s.getValue(), settingX, settingY, -1);
 							}
 								
 							if (setting instanceof KeybindSetting)
-								fr.drawStringWithShadow("Bind: " + (listening == setting ? "LISTENING" : Keyboard.getKeyName(((KeybindSetting) setting).getKeyCode())), settingX, settingY, (listening == setting ? new ColourUtil().getRainbow(3, 3, 3) : -1));
+								ffr.drawStringWithShadow("Bind: " + (listening == setting ? "LISTENING" : Keyboard.getKeyName(((KeybindSetting) setting).getKeyCode())), settingX, settingY, (listening == setting ? new ColourUtil().getRainbow(3, 3, 3) : -1));
 							
 							
 							settingY += 12;

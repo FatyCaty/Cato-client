@@ -23,6 +23,7 @@ public class TabGui extends Module {
 	
 	public TabGui(){
 		super("TabGui", Keyboard.KEY_NONE , Category.RENDER);
+		this.toggled = true;
 	}
 	
 	public void onEvent(Event e) {

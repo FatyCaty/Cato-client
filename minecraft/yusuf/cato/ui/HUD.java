@@ -29,16 +29,18 @@ public class HUD {
 		MinecraftFontRenderer ffr = FontUtil.normal;
 		
 		Cato.modules.sort(Comparator.comparingInt(m -> -(mc.fontRendererObj.getStringWidth((m).name))));
-		/*
+		
 		GlStateManager.pushMatrix();
 		GlStateManager.translate(4, 4, 0);
 		GlStateManager.scale(1, 1, 1);
-		ffr.drawString("Cato", 2, 14, -1);
+		ffr.drawString("C", 2, 14, -9999999);
+		ffr.drawString("ato", 9, 14, -1);
 		GlStateManager.popMatrix();
-		*/
 		
-		this.mc.getTextureManager().bindTexture(new ResourceLocation("Cato/watermark/watermark.png"));
-		Gui.drawScaledCustomSizeModalRect(5, -6, 0, 1, 50, 50, 50, 50, 50, 50);
+		
+		/*this.mc.getTextureManager().bindTexture(new ResourceLocation("Cato/watermark/watermark.png"));
+		 		Gui.drawScaledCustomSizeModalRect(5, -6, 0, 1, 50, 50, 50, 50, 50, 50);
+		 */
 		
 		/*
 		GlStateManager.pushMatrix();
@@ -55,7 +57,7 @@ public class HUD {
 			if(!m.toggled) {
 				continue;
 			}
-			ffr.drawString(m.name, sr.getScaledWidth() - ffr.getStringWidth(m.name) - 4, 4 + count*(fr.FONT_HEIGHT + 3), -1);
+			ffr.drawString(m.name, sr.getScaledWidth() - ffr.getStringWidth(m.name) - 4, 4 + count*(ffr.getHeight() + 4), -1);
 			count++;
 		}
 		Cato.onEvent(new EventRenderGUI());
