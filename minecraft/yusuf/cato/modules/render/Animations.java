@@ -12,7 +12,7 @@ import yusuf.cato.settings.ModeSetting;
 
 public class Animations extends Module {
 	
-	public static ModeSetting animationsSetting = new ModeSetting("Animations", "1.7", "1.7", "Push", "Weird", "Down", "Meow<3");
+	public static ModeSetting animationsSetting = new ModeSetting("Animations", "1.7", "1.7", "Push", "Weird", "Down", "Meow<3", "Cool");
 	
 	public static ModeSetting getAnimationsSetting() {
 		return animationsSetting;

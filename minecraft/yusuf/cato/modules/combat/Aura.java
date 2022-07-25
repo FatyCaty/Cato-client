@@ -13,6 +13,7 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemSword;
 import net.minecraft.network.play.client.C02PacketUseEntity;
 import net.minecraft.network.play.client.C02PacketUseEntity.Action;
 import yusuf.cato.events.Event;
@@ -33,13 +34,15 @@ public class Aura extends Module {
 	public static ModeSetting rotationMode = new ModeSetting("Rotation Modes", "SilentRotation", "SilentRotation", "NonSilentRotation", "NoRotation");
 	public static BooleanSetting onlyAttackPlayers = new BooleanSetting("Only Attack Players", false);
 	public static BooleanSetting keepSprint = new BooleanSetting("keepSprint", true);
+	public static BooleanSetting AutoBlock = new BooleanSetting("AutoBlock", true);
+
 	private Entity target;
 	public TimerUtil timer = new TimerUtil();
 	
 	
 	public Aura(){
 		super("Aura", Keyboard.KEY_R , Category.COMBAT);
-		this.addSettings(rotationMode, auraAttackSpeed, auraAttackReach);
+		this.addSettings(rotationMode, auraAttackSpeed, auraAttackReach, onlyAttackPlayers, keepSprint, AutoBlock);
 
 	}
 	
@@ -51,6 +54,8 @@ public class Aura extends Module {
 	
 	public void onDisable() {
 		mc.thePlayer.setSprinting(mc.gameSettings.keyBindSprint.isKeyDown());
+		KeyBinding.setKeyBindState(mc.gameSettings.keyBindUseItem.getKeyCode(), false);
+
 	}
 	
 	
@@ -70,6 +75,10 @@ public class Aura extends Module {
 					targets = targets.stream().filter(EntityPlayer.class::isInstance).collect(Collectors.toList());
 				}
 				
+				if(mc.thePlayer.getHeldItem().getItem() instanceof ItemSword && AutoBlock.isEnabled()) {
+					KeyBinding.setKeyBindState(mc.gameSettings.keyBindUseItem.getKeyCode(), true);
+				}
+	
 				
 				targets.sort(Comparator.comparingDouble(entity -> (entity).getDistanceToEntity(mc.thePlayer)));
 				
@@ -79,6 +88,7 @@ public class Aura extends Module {
 							mc.thePlayer.sendQueue.addToSendQueue(new C02PacketUseEntity(target, Action.ATTACK));
 							mc.thePlayer.swingItem();
 						
+							
 						if(rotationMode.is("SilentRotation")) {
 							event.setYaw(getRotations(target)[0]);
 							event.setPitch(getRotations(target)[1]);
@@ -106,7 +116,7 @@ public class Aura extends Module {
 					}
 				}
 				 */
-				
+	
 			}
 		}
 		

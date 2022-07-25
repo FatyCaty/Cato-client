@@ -10,15 +10,16 @@ import yusuf.cato.settings.NumberSetting;
 public class Timer extends Module {
 	private float originalTimerSpeed = mc.timer.timerSpeed;
 	
-	public static NumberSetting timerSpeedSetting = new NumberSetting("Timer Speed", 1.5, 1, 10, 1);
+	public static NumberSetting timerSpeedSetting = new NumberSetting("Timer Speed", 1, 1, 4, 1);
 	
 	
 	public Timer(){
 		super("Timer", Keyboard.KEY_NONE , Category.PLAYER);
+		this.addSettings(timerSpeedSetting);
 	}
 	
 	public void onEnable() {
-		mc.timer.timerSpeed = (float) timerSpeedSetting.value;
+		mc.timer.timerSpeed = (float)timerSpeedSetting.getValue();
 	}
 	
 	public void onDisable() {

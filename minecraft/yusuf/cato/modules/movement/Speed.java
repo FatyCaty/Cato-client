@@ -17,12 +17,12 @@ public class Speed extends Module {
 	}
 	
 	public void onEnable() {
-		mc.timer.timerSpeed = mc.timer.timerSpeed + 0.5f;
+		//mc.timer.timerSpeed = mc.timer.timerSpeed + 0.5f;
 	}
 	
 	
 	public void onDisable() {
-		mc.timer.timerSpeed = mc.timer.timerSpeed - 0.5f;
+		//mc.timer.timerSpeed = mc.timer.timerSpeed - 0.5f;
 
 	}
 	
@@ -44,11 +44,10 @@ public class Speed extends Module {
 				}
 				
 				if(speedModeSetting.is("Bhop")) {
-					if(mc.thePlayer.onGround && mc.thePlayer.moveForward > 0) {
+					if(mc.thePlayer.onGround) {
 						
 						mc.thePlayer.setSprinting(true);
-						mc.thePlayer.jump();
-						
+						mc.thePlayer.jump();						
 						
 					}
 				}

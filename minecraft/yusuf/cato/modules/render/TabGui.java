@@ -32,7 +32,7 @@ public class TabGui extends Module {
 			MinecraftFontRenderer ffr = FontUtil.normal;
 
 			Gui.drawRect(5, 30, 70, 30 + Module.Category.values().length * 16 + 2, 0x30000000);
-			Gui.drawRect(5, 30 + currentTab * 16, 9 + 61, 36 + currentTab * 16 + 12, 0x90000000);
+			Gui.drawRect(7, 34 + currentTab * 16, 9, 31 + currentTab * 16 + 12, 0x90000000);
 			
 			int count = 0;
 			for(Category c : Module.Category.values()) {
@@ -53,7 +53,7 @@ public class TabGui extends Module {
 				
 				count = 0;
 				for(Module m : modules) {
-					fr.drawString(m.name, 73, 35 + count*16, -1);
+					ffr.drawString(m.name, 73, 35 + count*16, -1);
 					count++;
 
 				}

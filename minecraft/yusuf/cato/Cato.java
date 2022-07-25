@@ -57,6 +57,7 @@ public class Cato {
 		modules.add(new ClickGuiMod());
 		modules.add(new Criticals());
 
+
 		
 		FontUtil.bootstrap();
 

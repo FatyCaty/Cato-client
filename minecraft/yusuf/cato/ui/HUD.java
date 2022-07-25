@@ -27,14 +27,14 @@ public class HUD {
 		ScaledResolution sr = new ScaledResolution(mc);
 		FontRenderer fr = mc.fontRendererObj;
 		MinecraftFontRenderer ffr = FontUtil.normal;
+
 		
-		Cato.modules.sort(Comparator.comparingInt(m -> -(mc.fontRendererObj.getStringWidth((m).name))));
+		Cato.modules.sort(Comparator.comparingInt(m -> (int)-(ffr.getStringWidth((m).name))));
 		
 		GlStateManager.pushMatrix();
 		GlStateManager.translate(4, 4, 0);
 		GlStateManager.scale(1, 1, 1);
-		ffr.drawString("C", 2, 14, -9999999);
-		ffr.drawString("ato", 9, 14, -1);
+		ffr.drawString("Catoware", 9, 14, -1);
 		GlStateManager.popMatrix();
 		
 		

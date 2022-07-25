@@ -18,6 +18,8 @@ public class RenderTest extends Module {
 	
 	public void onEnable() {
 		System.out.println("Amogus");
+
+
 	}
 	
 	
@@ -28,13 +30,14 @@ public class RenderTest extends Module {
 	
 	public void onEvent(Event e) {
 		if(e instanceof EventRenderGUI) {
-			FontRenderer fr = mc.fontRendererObj;
 			
-			fr.drawString("Amogus", 200, 8, -1);
+			FontRenderer fr = mc.fontRendererObj;
+			fr.drawString("Amogus",12, 10, -1);
 			
 
 		}
 	}
+	
 	
 	
 }

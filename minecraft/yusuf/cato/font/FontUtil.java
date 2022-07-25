@@ -45,6 +45,7 @@ public class FontUtil {
         {
             Map<String, Font> locationMap = new HashMap<>();
             normal_ = getFont(locationMap, "font.ttf", 19);
+
             completed++;
         }).start();
         new Thread(() ->

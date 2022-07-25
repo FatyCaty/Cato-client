@@ -328,10 +328,22 @@ public class ItemRenderer
 
             }
     	}
-    	GlStateManager.translate(-0.5F, 0.2F, 0.0F);
-        GlStateManager.rotate(30.0F, 0.0F, 1.0F, 0.0F);
-        GlStateManager.rotate(-80.0F, 1.0F, 0.0F, 0.0F);
-        GlStateManager.rotate(60.0F, 0.0F, 1.0F, 0.0F);
+    	else if(((Animations) Cato.getModulesByName("Animations")).getAnimationsSetting().is("Cool")) {
+    		float swordSize = 0.6f;
+    		GlStateManager.translate(-0.5F, 0.2F, 0.0F);
+            GlStateManager.rotate(30.0F, 0.0F, 1.0F, 0.0F);
+            GlStateManager.rotate(-50.0F, 1.0F, 0.0F, 0.0F);
+            GlStateManager.rotate(60.0F, 0.0F, 1.0F, 0.0F);
+            GlStateManager.scale(swordSize, swordSize, swordSize);
+
+    	}
+    	else{
+    		GlStateManager.translate(-0.5F, 0.2F, 0.0F);
+            GlStateManager.rotate(30.0F, 0.0F, 1.0F, 0.0F);
+            GlStateManager.rotate(-80.0F, 1.0F, 0.0F, 0.0F);
+            GlStateManager.rotate(60.0F, 0.0F, 1.0F, 0.0F);
+    	}
+    	
     }
 
     /**
@@ -388,6 +400,9 @@ public class ItemRenderer
                         	}
                         	if(((Animations) Cato.getModulesByName("Animations")).getAnimationsSetting().is("Meow<3")) {
                         		this.transformFirstPersonItem(f,1F);
+                        	}
+                        	if(((Animations) Cato.getModulesByName("Animations")).getAnimationsSetting().is("Cool")) {
+                        		this.transformFirstPersonItem(f - 0.4f, f1 - 1f);
                         	}
 
                         }

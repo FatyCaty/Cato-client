@@ -105,6 +105,11 @@ public class Scaffold extends Module {
 				place(bp.add(1, -1, -1), EnumFacing.NORTH);
 			}
 	}
+	if(e instanceof EventMotion) {
+		((EventMotion) e).setPitch(mc.thePlayer.rotationPitch - 180);
+		((EventMotion) e).setPitch(-90);
+
+	}
 	}
 
 	
