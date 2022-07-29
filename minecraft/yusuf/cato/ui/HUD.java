@@ -34,7 +34,14 @@ public class HUD {
 		GlStateManager.pushMatrix();
 		GlStateManager.translate(4, 4, 0);
 		GlStateManager.scale(1, 1, 1);
-		ffr.drawString("Catoware", 9, 14, -1);
+		ffr.drawString("C", 9, 14, new ColourUtil().getRainbowWave(3,1, 1, 100));
+		ffr.drawString("a", 15, 14, new ColourUtil().getRainbowWave(3,1, 1, 200));
+		ffr.drawString("t", 15 + 5, 14, new ColourUtil().getRainbowWave(3,1, 1, 300));
+		ffr.drawString("o", 15 + 8, 14, new ColourUtil().getRainbowWave(3,1, 1, 400));
+
+
+
+		
 		GlStateManager.popMatrix();
 		
 		

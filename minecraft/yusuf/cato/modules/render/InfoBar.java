@@ -30,8 +30,18 @@ public class InfoBar extends Module {
 		if(e instanceof EventRenderGUI) {
 			fr.drawString("Version: " + Cato.version, 8, 35 /*+ 10*/, -1);
 			fr.drawString("FPS: " + mc.getDebugFPS(), 8, 35 + 10, -1);
+			
+			long index = 100;
+			Gui.drawRect(5, 30, 20, 32, new ColourUtil().getRainbowWave(3, 3, 1, index));
+			Gui.drawRect(20, 30, 40, 32, new ColourUtil().getRainbowWave(3, 3, 2, index + 50));
+			Gui.drawRect(40, 30, 60, 32, new ColourUtil().getRainbowWave(3, 3, 3, index + 100));
+			Gui.drawRect(60, 30, 80, 32, new ColourUtil().getRainbowWave(3, 3, 4, index + 150));
+			Gui.drawRect(80, 30, 90, 32, new ColourUtil().getRainbowWave(3, 5, 5, index + 200));
 
-			Gui.drawRect(5, 30, 90, 32, new ColourUtil().getRainbowWave(3, 1, 1, 30));
+
+
+			//Gui.drawRect(30, 30, 60, 32, new ColourUtil().getRainbowWave(3, 3, 3, 200));
+
 			Gui.drawRect(5, 30, 90, 75, 0x40000000);
 			
 		}

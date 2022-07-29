@@ -51,11 +51,7 @@ public class ItemRenderer
 
     /** The index of the currently held item (0-8, or -1 if not yet updated) */
     private int equippedItemSlot = -1;
-    
-    
-    //Cato Animation var:
-    private int spinAnimationProcess = 0;
-    
+        
     
     public ItemRenderer(Minecraft mcIn)
     {
@@ -313,43 +309,7 @@ public class ItemRenderer
 
     private void func_178103_d()
     {
-    	/*
-    	if(((Animations) Cato.getModulesByName("Animations")).getAnimationsSetting().is("Meow<3")) {
-    		int speed = 3;
-    		double scale = 0.6;
-    		GlStateManager.translate(-0.5F, 0.7F, 0.0F);
-    		GlStateManager.scale(scale, scale, scale);
-            GlStateManager.rotate(30.0F + spinAnimationProcess, 0.0F, 1.0F, 0.0F);
-            GlStateManager.rotate(-80.0F , 1.0F, 0.0F, 0.0F);
-            GlStateManager.rotate(60.0F , 0.0F , 1.0F, 0.0F);
-
-            if(spinAnimationProcess >= 360) {
-            	spinAnimationProcess = 0;
-            	spinAnimationProcess += speed;
-            }
-            else {
-            	spinAnimationProcess += speed;
-
-            }
-    	}
-    	else if(((Animations) Cato.getModulesByName("Animations")).getAnimationsSetting().is("Cool")) {
-    		float swordSize = 0.6f;
-    		GlStateManager.translate(-0.5F, 0.2F, 0.0F);
-            GlStateManager.rotate(30.0F, 0.0F, 1.0F, 0.0F);
-            GlStateManager.rotate(-50.0F, 1.0F, 0.0F, 0.0F);
-            GlStateManager.rotate(60.0F, 0.0F, 1.0F, 0.0F);
-            GlStateManager.scale(swordSize, swordSize, swordSize);
-
-    	}
     	
-    	else{
-    		GlStateManager.translate(-0.5F, 0.2F, 0.0F);
-            GlStateManager.rotate(30.0F, 0.0F, 1.0F, 0.0F);
-            GlStateManager.rotate(-80.0F, 1.0F, 0.0F, 0.0F);
-            GlStateManager.rotate(60.0F, 0.0F, 1.0F, 0.0F);
-
-    	}
-    	*/
     	GlStateManager.translate(-0.5F, 0.2F, 0.0F);
         GlStateManager.rotate(30.0F, 0.0F, 1.0F, 0.0F);
         GlStateManager.rotate(-80.0F, 1.0F, 0.0F, 0.0F);
@@ -410,10 +370,15 @@ public class ItemRenderer
                         		this.transformFirstPersonItem(f1,f);
                         	}
                         	if(((Animations) Cato.getModulesByName("Animations")).getAnimationsSetting().is("Meow<3")) {
-                        		this.transformFirstPersonItem(f,1F);
+                        		this.transformFirstPersonItem(-0.5f,f1);
+                                GlStateManager.scale(0.6,0.6,0.6);
+                                
+
                         	}
                         	if(((Animations) Cato.getModulesByName("Animations")).getAnimationsSetting().is("Cool")) {
-                        		this.transformFirstPersonItem(f - 0.4f, f1 - 1f);
+                        		this.transformFirstPersonItem(f - 0.2f, f1 - 1f);
+                                GlStateManager.scale(0.6,0.6,0.6);
+                                GlStateManager.translate(-0.3F, 0.56F, 0.2F);
                         	}
 
                         }
