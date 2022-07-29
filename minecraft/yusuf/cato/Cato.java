@@ -20,7 +20,7 @@ import org.lwjgl.opengl.Display;
 
 public class Cato {
 	public static Cato cato;
-	public static String name = "Cato", version =  "b1-rel", authors = "Yusuf - FatyCaty";
+	public static String name = "Cato", version =  "b1-rel", authors = "FatyCaty"; //FatyCaty aka Yusuf
 	public static CopyOnWriteArrayList<Module> modules = new CopyOnWriteArrayList<Module>();
 	public static HUD hud = new HUD();
 	public static AltManager altManager;
@@ -54,6 +54,7 @@ public class Cato {
 		modules.add(new Step());
 		modules.add(new Derp());
 		modules.add(new Fly());
+		modules.add(new InfoBar());
 		modules.add(new ClickGuiMod());
 		modules.add(new Criticals());
 

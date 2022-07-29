@@ -57,7 +57,7 @@ public class HUD {
 			if(!m.toggled) {
 				continue;
 			}
-			ffr.drawString(m.name, sr.getScaledWidth() - ffr.getStringWidth(m.name) - 4, 4 + count*(ffr.getHeight() + 4), -1);
+			ffr.drawString(m.name, sr.getScaledWidth() - ffr.getStringWidth(m.name) - 4, 4 + count*(ffr.getHeight() + 4), new ColourUtil().getRainbowWave(5, 1, 1, count *125));
 			count++;
 		}
 		Cato.onEvent(new EventRenderGUI());

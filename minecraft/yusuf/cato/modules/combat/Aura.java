@@ -75,10 +75,11 @@ public class Aura extends Module {
 					targets = targets.stream().filter(EntityPlayer.class::isInstance).collect(Collectors.toList());
 				}
 				
+				/*
 				if(mc.thePlayer.getHeldItem().getItem() instanceof ItemSword && AutoBlock.isEnabled()) {
 					KeyBinding.setKeyBindState(mc.gameSettings.keyBindUseItem.getKeyCode(), true);
 				}
-	
+				*/
 				
 				targets.sort(Comparator.comparingDouble(entity -> (entity).getDistanceToEntity(mc.thePlayer)));
 				

@@ -313,12 +313,16 @@ public class ItemRenderer
 
     private void func_178103_d()
     {
+    	/*
     	if(((Animations) Cato.getModulesByName("Animations")).getAnimationsSetting().is("Meow<3")) {
     		int speed = 3;
-    		GlStateManager.translate(-0.5F, 0.2F, 0.0F);
+    		double scale = 0.6;
+    		GlStateManager.translate(-0.5F, 0.7F, 0.0F);
+    		GlStateManager.scale(scale, scale, scale);
             GlStateManager.rotate(30.0F + spinAnimationProcess, 0.0F, 1.0F, 0.0F);
             GlStateManager.rotate(-80.0F , 1.0F, 0.0F, 0.0F);
             GlStateManager.rotate(60.0F , 0.0F , 1.0F, 0.0F);
+
             if(spinAnimationProcess >= 360) {
             	spinAnimationProcess = 0;
             	spinAnimationProcess += speed;
@@ -337,12 +341,19 @@ public class ItemRenderer
             GlStateManager.scale(swordSize, swordSize, swordSize);
 
     	}
+    	
     	else{
     		GlStateManager.translate(-0.5F, 0.2F, 0.0F);
             GlStateManager.rotate(30.0F, 0.0F, 1.0F, 0.0F);
             GlStateManager.rotate(-80.0F, 1.0F, 0.0F, 0.0F);
             GlStateManager.rotate(60.0F, 0.0F, 1.0F, 0.0F);
+
     	}
+    	*/
+    	GlStateManager.translate(-0.5F, 0.2F, 0.0F);
+        GlStateManager.rotate(30.0F, 0.0F, 1.0F, 0.0F);
+        GlStateManager.rotate(-80.0F, 1.0F, 0.0F, 0.0F);
+        GlStateManager.rotate(60.0F, 0.0F, 1.0F, 0.0F);
     	
     }
 
