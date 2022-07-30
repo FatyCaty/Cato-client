@@ -48,6 +48,7 @@ public class Cato {
 		modules.add(new NoFall());
 		modules.add(new NoSlow());
 		modules.add(new Sprint());
+		modules.add(new HUNAttila());
 		modules.add(new Timer());
 		modules.add(new Speed());
 		modules.add(new Aura());
