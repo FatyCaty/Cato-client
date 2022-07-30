@@ -10,6 +10,8 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiScreen;
+import net.minecraft.client.gui.ScaledResolution;
+import net.minecraft.util.ResourceLocation;
 import yusuf.cato.Cato;
 import yusuf.cato.font.FontUtil;
 import yusuf.cato.font.MinecraftFontRenderer;
@@ -33,6 +35,11 @@ public class ClickGUI extends GuiScreen{
 		//drawDefaultBackground();
 		FontRenderer fr = mc.fontRendererObj;
 		MinecraftFontRenderer ffr = FontUtil.normal;
+		ScaledResolution sr = new ScaledResolution(mc);
+
+		
+		this.mc.getTextureManager().bindTexture(new ResourceLocation("Cato/images/cat.jpg"));
+ 		Gui.drawScaledCustomSizeModalRect(10, sr.getScaledHeight() - 50, 0, 1, 50+ 25, 50+ 25, 50+ 25, 50+ 25, 50+ 25, 50+ 25);
 
 		
 		for (Category c : Category.values()) {
@@ -60,7 +67,7 @@ public class ClickGUI extends GuiScreen{
 						for (Setting setting : m.settings) {
 							
 							if (setting instanceof BooleanSetting)
-								ffr.drawStringWithShadow(setting.name, settingX, settingY,((BooleanSetting) setting).enabled ? new ColourUtil().getRainbow(3, 3, 3) : -1);
+								ffr.drawStringWithShadow(setting.name, settingX, settingY,((BooleanSetting) setting).enabled ? -9999999: -1);
 							
 							if (setting instanceof ModeSetting)
 								ffr.drawStringWithShadow(setting.name + ": " + ((ModeSetting) setting).getMode(), settingX, settingY, -1);
@@ -89,7 +96,7 @@ public class ClickGUI extends GuiScreen{
 									}
 								}
 								
-								Gui.drawRectFloat(settingX, settingY, (float) (settingX + renderX), settingY + fr.FONT_HEIGHT,(new ColourUtil().getRainbow(3, 3, 3)));
+								Gui.drawRectFloat(settingX, settingY, (float) (settingX + renderX), settingY + fr.FONT_HEIGHT,(-2));
 								
 								ffr.drawStringWithShadow(s.name + ": " + s.getValue(), settingX, settingY, -1);
 							}

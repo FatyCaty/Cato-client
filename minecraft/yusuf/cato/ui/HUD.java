@@ -34,10 +34,10 @@ public class HUD {
 		GlStateManager.pushMatrix();
 		GlStateManager.translate(4, 4, 0);
 		GlStateManager.scale(1, 1, 1);
-		ffr.drawString("C", 9, 14, new ColourUtil().getRainbowWave(3,1, 1, 100));
-		ffr.drawString("a", 15, 14, new ColourUtil().getRainbowWave(3,1, 1, 200));
-		ffr.drawString("t", 15 + 5, 14, new ColourUtil().getRainbowWave(3,1, 1, 300));
-		ffr.drawString("o", 15 + 8, 14, new ColourUtil().getRainbowWave(3,1, 1, 400));
+		ffr.drawString("C", 9-5, 14, new ColourUtil().getRainbowWave(3,1, 1, 100));
+		ffr.drawString("a", 15-5, 14, new ColourUtil().getRainbowWave(3,1, 1, 200));
+		ffr.drawString("t", 15-5 + 5, 14, new ColourUtil().getRainbowWave(3,1, 1, 300));
+		ffr.drawString("o", 15-5 + 8, 14, new ColourUtil().getRainbowWave(3,1, 1, 400));
 
 
 
@@ -45,7 +45,7 @@ public class HUD {
 		GlStateManager.popMatrix();
 		
 		
-		/*this.mc.getTextureManager().bindTexture(new ResourceLocation("Cato/watermark/watermark.png"));
+		/*this.mc.getTextureManager().bindTexture(new ResourceLocation("Cato/images/cat.jpg"));
 		 		Gui.drawScaledCustomSizeModalRect(5, -6, 0, 1, 50, 50, 50, 50, 50, 50);
 		 */
 		

@@ -10,6 +10,7 @@ public class NoFall extends Module {
 	public NoFall(){
 		super("NoFall", Keyboard.KEY_NONE , Category.PLAYER);
 	}
+	//flyModeSetting
 	
 	public void onEvent(Event e) {
 		if(e instanceof EventUpdate && e.isPre() && mc.thePlayer.fallDistance > 2) {

@@ -16,6 +16,9 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 import org.lwjgl.opengl.Display;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.util.ChatComponentText;
+
 //Nefs Video https://youtu.be/o8fuBYUB6cI
 
 public class Cato {
@@ -112,6 +115,10 @@ public class Cato {
 		}
 		
 		return null;
+	}
+	
+	public static void addChatMessage(String message) {
+		Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText(" \u00A79 " + name + " | " + message + " | "));
 	}
 	
 }
